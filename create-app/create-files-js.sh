@@ -16,6 +16,7 @@ function configVanilla(){
 
 function configReact(){
 	echo "We're starting this process, One moment"
+	
 	cd $nameProject
 	touch README.md
 	mkdir Public && mkdir Public/Images && mv src/favicon.svg  ./Public/Images && mv src/logo.svg ./Public/Images
@@ -26,10 +27,7 @@ function configReact(){
 
 	if [[ $eslint == "yes" ]]
 	then 
-		cat /home/sebasttiandaza/myScripting/eslint/React/.eslintrc.js > .eslintrc.js
-		npm i eslint --save-dev
-		npm i --save-dev eslint-config-prettier
-		npm i eslint-plugin-react-hooks
+		yo sebas:Generators
 	fi
 
 	code .
