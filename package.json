@@ -1,0 +1,29 @@
+{
+  "name": "generator-sebas",
+  "version": "1.1.10",
+  "description": "<!-- Please update value in the {}  -->",
+  "files": [
+    "generators"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^2.0.1"
+  },
+  "author": "Sebastian Daza",
+  "license": "ISC",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SebasttianDaza/myScriptings.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SebasttianDaza/myScriptings/issues"
+  },
+  "homepage": "https://github.com/SebasttianDaza/myScriptings#readme"
+}
