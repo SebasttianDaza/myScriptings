@@ -27,7 +27,7 @@ function configReact(){
 
 	if [[ $eslint == "yes" ]]
 	then 
-		yo sebas:Generators
+		yo sebas:React
 	fi
 
 	code .
