@@ -12,34 +12,60 @@ module.exports = class extends Generator {
     async prompting() {
         const answers = await this.prompt([
             {
+                type: 'list',
+                name: 'eslint',
+                message: 'What more would you like to add?',
+                choices: [
+                    {
+                        name : 'React',
+                        checked: true
+                    },
+                    {
+                        name : 'React-Typescript',
+                    },
+                    {
+                        name: 'React-Typescript-Next',
+                    },
+                    {
+                        name: 'React-Next',
+                    }
+                ]
+            }, {
                 type: 'checkbox',
                 name: 'features',
                 message: 'What more would you like to add?',
                 choices: [
                     {
-                        name : 'React recommended',
-                        checked: true
+                        name: 'Axios',
                     },
                     {
-                        name : 'Eslint',
+                        name: 'Redux',
                     },
                     {
-                        name: 'Prettier',
+                        name: 'Bootstrap',
                     }
                 ]
-            }, 
-            {
-                type: 'input',
-                name: 'helperMethod',
-                message: 'What is your helper method name?',
-                default: 'helperMethod'
             }
-        ])
+        ]);
 
+        if(answers.eslint) {
 
-        if (answers.features.includes('Eslint') && answers.features.includes('Prettier')) {
-            this.composeWith(require.resolve('../ESLint/React'));
+            if(answers.eslint.includes('React')) {
+                this.composeWith(require.resolve('../ESLint/React'));
+            }
+
+            if(answers.eslint.includes('React-Typescript')) {
+                this.composeWith(require.resolve('../ESLint/React-Typescript'));
+            }
+
+            if(answers.eslint.includes('React-Typescript-Next')) {
+                this.composeWith(require.resolve('../ESLint/React-Typescript-Next'));
+            }
+
+            if(answers.eslint.includes('React-Next')) {
+                this.composeWith(require.resolve('../ESLint/React-Next'));
+            }
         }
-    };
+    }
 
 };
