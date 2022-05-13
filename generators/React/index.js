@@ -42,8 +42,8 @@ module.exports = class extends Generator {
                         name: 'Redux',
                     },
                     {
-                        name: 'Bootstrap',
-                    }
+                        name: 'Bootstrap && React-Bootstrap',
+                    },
                 ]
             }
         ]);
