@@ -72,13 +72,14 @@ module.exports = class extends Generator {
         this.composeWith(require.resolve("./Vue"));
        }
     }
-    /*
-
+    
     initialRepo() {
         if (this.initialRepo) {
             this.composeWith(require.resolve("./Git/Local"));
         }
     }
+    
+    /*
     createRepoRemote() {
         if (this.createRepoRemote === "GitHub") {
             this.composeWith(require.resolve("./Git/Remote/GitHub"));
