@@ -1,10 +1,6 @@
 const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
-    constructor(args, opts) {
-        super(args, opts);
-    }
-
     async prompting() {
         const answers = await this.prompt([ 
             {

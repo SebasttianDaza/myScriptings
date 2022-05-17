@@ -4,9 +4,6 @@ module.exports = class extends Generator {
     constructor(args, opts) {
         super(args, opts);
         this.option('babel');
-        this.helperMethod = () => {
-            this.log('helperMethod');
-        };
     }
 
     async prompting() {
