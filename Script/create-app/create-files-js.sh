@@ -1,17 +1,20 @@
 #!/bin/bash
-echo "🌐 Name the your project 😎:"
+
+echo "Welcome command to create your projects" | boxes -d boy -a c | lolcat
+
+echo "🌐 Name the your project 😎:" | lolcat
 read  nameProject
-echo "🌐 Type of template 💻"
+echo "🌐 Type of template 💻" | lolcat
 
 options=0
 
 while [ $options -ne 5 ] ;
 do
-	echo "1. Vanilla JS"
-	echo "2. React JS"
-	echo "3. Vue JS"
-	echo "4. Back"
-	echo "5. Exit"
+	echo "1. Vanilla JS" | lolcat
+	echo "2. React JS" | lolcat
+	echo "3. Vue JS" | lolcat
+	echo "4. Back" | lolcat
+	echo "5. Exit" | lolcat
 	read -p "Enter your option: " options
 
 	case $options in
@@ -28,8 +31,10 @@ do
 		2)
 			npm create vite@latest $nameProject -- --template react
 			function configReact( ){
-				echo "We're starting this process, One moment"
-				
+				echo
+				echo "We're starting this process, One moment" | lolcat
+				echo
+
 				cd $nameProject
 
 				touch README.md
@@ -42,6 +47,8 @@ do
 
 				npm i
 
+				echo "Welcome Generator Sebas Yeoman!" | lolcat | boxes -d unicornthink
+
 				yo sebas
 
 				code .
@@ -52,25 +59,28 @@ do
 		3)
 			npm create vite@latest $nameProject -- --template vue
 			function configVue () {
-				echo "Coming soon"
+				echo "Coming soon" | boxes -d peek -a c -s 40x11 | lolcat
 			}
 			configVue
 			break
 			;;
 		4)
 			function back () {
-				echo "🔙 Back Coming soon"
+				echo "🔙 Back Coming soon" | boxes -d peek -a c -s 40x11 | lolcat
 			}
 			back
 			break
 			;;
 		5)
+			function exit () {
+				echo "🚪 Exit" | boxes -d peek -a c -s 40x11 | lolcat
+			}
 			exit
 			;;
 		*)
-			echo "Invalid option"
+			echo "Invalid option" | boxes -d | lolcat
 			;;
 	esac
 done
 
-echo "Finished, Bye"
+echo "Finished, Bye" | lolcat
