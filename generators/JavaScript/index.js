@@ -18,13 +18,17 @@ module.exports = class extends Generator {
             }
         ]);
 
-        if(answers.ESLint) {
-            if(answers.ESLint === 'JavaScript Vanilla') {
-                this.composeWith(require.resolve('../ESLint/Vanilla'));
-            }
-            if(answers.ESLint === 'JavaScript-Typescript') {
-                this.composeWith(require.resolve('../ESLint/Vanilla-Typescript'));
-            }
+        this.ESLint = answers.ESLint;
+    }
+
+    useInfo() {
+        if (this.ESLint) {
+          if (this.ESLint === "JavaScript Vanilla") {
+            this.composeWith(require.resolve("../ESLint/Vanilla"));
+          }
+          if (this.ESLint === "JavaScript-Typescript") {
+            this.composeWith(require.resolve("../ESLint/Vanilla-Typescript"));
+          }
         }
     }
 }

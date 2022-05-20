@@ -1,4 +1,4 @@
-const Generator = require('yeoman-generator');
+const generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
   showInfo() {

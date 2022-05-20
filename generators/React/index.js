@@ -41,6 +41,9 @@ module.exports = class extends Generator {
                     {
                         name: 'Bootstrap && React-Bootstrap',
                     },
+                    {
+                        name: 'Jest',
+                    },
                 ]
             }
         ]);
