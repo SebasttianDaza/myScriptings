@@ -44,27 +44,36 @@ module.exports = class extends Generator {
                     {
                         name: 'Jest',
                     },
+                    {
+                        name: 'Sass'
+                    }
                 ]
             }
         ]);
 
-        if(answers.eslint) {
+        this.Eslint = answers.eslint;
+        this.Features = answers.features;
+    }
 
-            if(answers.eslint.includes('React')) {
-                this.composeWith(require.resolve('../ESLint/React'));
-            }
+    selectEslint() {
+        if (this.Eslint) {
+          if (this.Eslint.includes("React")) {
+            this.composeWith(require.resolve("../ESLint/React"));
+          }
 
-            if(answers.eslint.includes('React-Typescript')) {
-                this.composeWith(require.resolve('../ESLint/React-Typescript'));
-            }
+          if (this.Eslint.includes("React-Typescript")) {
+            this.composeWith(require.resolve("../ESLint/React-Typescript"));
+          }
 
-            if(answers.eslint.includes('React-Typescript-Next')) {
-                this.composeWith(require.resolve('../ESLint/React-Typescript-Next'));
-            }
-
-            if(answers.eslint.includes('React-Next')) {
-                this.composeWith(require.resolve('../ESLint/React-Next'));
-            }
+          if (this.Eslint.includes("React-Typescript-Next")) {
+            this.composeWith(
+              require.resolve("../ESLint/React-Typescript-Next")
+            );
+          }
+          
+          if (this.Eslint.includes("React-Next")) {
+            this.composeWith(require.resolve("../ESLint/React-Next"));
+          }
         }
     }
 

@@ -6,40 +6,40 @@ module.exports = class extends Generator {
     this.log('Welcome to the React-Vue-JavaScript-Generator');
     const answers = await this.prompt([
       {
-        type: 'list',
-        name: 'type',
-        message: 'What would you like to generate?',
+        type: "list",
+        name: "type",
+        message: "What would you like to generate?",
         choices: [
           {
-            name: 'React',
+            name: "React",
           },
           {
-            name: 'JavaScript Vanilla',
+            name: "JavaScript Vanilla",
           },
           {
-            name: 'Vue',
+            name: "Vue",
           },
         ],
       },
       {
-        type: 'confirm',
-        name: 'initialRepo',
-        message: 'Would you like to initialize a repository?',
+        type: "confirm",
+        name: "initialRepo",
+        message: "Would you like to initialize a repository?",
         default: true,
       },
       {
-        type: 'list',
-        name: 'createRepoRemote',
-        message: 'Would you like to create a new repository with?',
+        type: "list",
+        name: "createRepoRemote",
+        message: "Would you like to create a new repository with?",
         choices: [
           {
-            name: 'GitHub',
+            name: "GitHub",
           },
           {
-            name: 'GitLab',
+            name: "GitLab",
           },
           {
-            name: 'BitBucket',
+            name: "BitBucket",
           },
         ],
       },
@@ -50,6 +50,8 @@ module.exports = class extends Generator {
     const { createRepoRemote } = answers;
 
     this.appname = type;
+    this.nameapp = answers.appname;
+    this.nameappall = answers.appnameall;
     this.initialRepo = initialRepo;
     this.createRepoRemote = createRepoRemote;
   }
@@ -70,10 +72,9 @@ module.exports = class extends Generator {
 
   initialRepo() {
     this.log('You must to start your repo with same name');
-
     if (this.initialRepo) {
       this.composeWith(require.resolve('./Git/Local'));
-    }
+    }    
   }
 
   createRepoRemote() {
