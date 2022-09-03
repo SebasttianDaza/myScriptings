@@ -46,9 +46,6 @@ module.exports = class extends Generator {
             name: 'React-Router'
           },
           {
-            name: 'React-Router-Dom'
-          },
-          {
             name: 'Styled-Components'
           },
           {
@@ -70,17 +67,14 @@ module.exports = class extends Generator {
       if (this.Eslint.includes('React')) {
         this.composeWith(require.resolve('../ESLint/React'))
       }
-
       if (this.Eslint.includes('React-Typescript')) {
         this.composeWith(require.resolve('../ESLint/React-Typescript'))
       }
-
       if (this.Eslint.includes('React-Typescript-Next')) {
         this.composeWith(
           require.resolve('../ESLint/React-Typescript-Next')
         )
       }
-
       if (this.Eslint.includes('React-Next')) {
         this.composeWith(require.resolve('../ESLint/React-Next'))
       }
@@ -90,7 +84,25 @@ module.exports = class extends Generator {
   selectFeatures () {
     this.Features.forEach(feature => {
       if (feature === 'Sass') {
-        this.composeWith(require.resolve('../Framework/SCSS'))
+        this.composeWith(require.resolve('./Frameworks/SCSS'))
+      }
+      if (feature === 'Axios') {
+        this.composeWith(require.resolve('./Frameworks/Axios'))
+      }
+      if (feature === 'Bootstrap && React-Bootstrap') {
+        this.composeWith(require.resolve('./Frameworks/ReactBootstrap'))
+      }
+      if (feature === 'Redux && React-Redux') {
+        this.composeWith(require.resolve('./Frameworks/Redux'))
+      }
+      if (feature === 'React-Router') {
+        this.composeWith(require.resolve('./Frameworks/React-router'))
+      }
+      if (feature === 'Styled-Components') {
+        this.composeWith(require.resolve('./Frameworks/Styled-components'))
+      }
+      if (feature === 'Chakra-UI') {
+        this.composeWith(require.resolve('./Frameworks/Chakra'))
       }
     })
   }
