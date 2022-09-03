@@ -4,9 +4,12 @@ module.exports = class extends Generator {
   installDependencies () {
     this.npmInstall(
       [
-        'axios'
+        'sass'
       ],
-      { 'save-dev': false }
+      { 'save-dev': true }
     )
+  }
+
+  createFiles () {
   }
 }

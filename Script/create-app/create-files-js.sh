@@ -43,7 +43,7 @@ do
 
 				mkdir src/Hooks && mkdir src/Services && mkdir src/Components
 
-				mkdir src/Errors 
+				mkdir src/Errors && mkdir/Context && mkdir src/Pages && mkdir src/Utilites && mkdir src/Adapters
 
 				npm i
 
