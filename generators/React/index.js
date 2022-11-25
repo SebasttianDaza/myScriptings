@@ -53,6 +53,18 @@ module.exports = class extends Generator {
           },
           {
             name: 'TailwindCSS'
+          },
+          {
+            name: 'GraphQL'
+          },
+          {
+            name: 'React-Query'
+          },
+          {
+            name: 'React-Testing-Library'
+          },
+          {
+            name: 'Cypress'
           }
         ]
       }

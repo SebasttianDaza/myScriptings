@@ -11,10 +11,8 @@ module.exports = class extends Generator {
   }
 
   createFolderWithFiles () {
-    this.mkdir('src/scss')
-    this.fs.copy(
-      this.templatePath('./Template/scss/'),
-      this.destinationPath('src/scss')
-    )
+    this.createFolder('src/scss')
+    this.createFolder('src/scss/base')
+    this.createFolder('src/scss/components')
   }
 }
